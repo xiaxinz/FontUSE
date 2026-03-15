@@ -51,13 +51,13 @@ The final outputs are JSON files that can be used to build datasets for controll
    ```
 
 
-2. Hi-SAM checkpoint
+2. **Hi-SAM checkpoint**
 
 Download the required Hi-SAM checkpoint from the official [Hi-SAM](https://github.com/ymy-k/Hi-SAM) repository. See more details at the official page.
 You will pass its path to the scripts via the --checkpoint argument.
 
 
-3. OpenAI API key
+3. **OpenAI API key**
 
 Both `ocr_by_gpt.py` and `usecase_gen.py` call the OpenAI API via the official openai package.
 
