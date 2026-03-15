@@ -32,8 +32,8 @@ The final outputs are JSON files that can be used to build datasets for controll
   - a list of use cases where this font would be suitable.  
   For each image the script writes one or up to three caption JSON files depending on how many `usecases` are returned.
 
-- `examples/` and `testdata-3/`  
-  Small example images for testing.
+- `testdata-3/`  
+  Three example images for testing.
 
 - `hi_sam/`  
   Local Hi-SAM implementation used by `text_bbox_detection.py`.
@@ -65,7 +65,7 @@ Either edit these files and set `OPENAI_API_KEY = "YOUR_KEY_HERE"`, or
 
 change the code to read the key from the `OPENAI_API_KEY` environment variable.
 
-Make sure that the models you configure (default: `gpt-4o-mini`) are available in your OpenAI account.
+Make sure that the models you configure (default: `gpt-4o`) are available in your OpenAI account.
 
 ## One-shot pipeline: images → OCR + caption
 
@@ -149,10 +149,21 @@ A dictionary with fields such as:
 ```
 {
   "img_name": "IMG-NAME.jpg",
-  "caption": "Suitable For: modern educational and creative projects. Ideal Applications: [creative] Marketing materials for workshops or conferences focused on innovation. Font Styles: bold, sans-serif...",
-  "suitable-for": "modern educational and creative projects",
-  "usecases": "[creative] Marketing materials for workshops or conferences focused on innovation",
-  "styles": "mbold, sans-serif"
+  "caption": "Suitable For: modern educational and creative projects.; Ideal Applications: **[creative] Marketing materials for workshops or conferences focused on innovation...**; Font Styles: bold; sans-serif; ...; Colors: yellow, white",
+  "suitable-for": "modern educational and creative projects.",
+  "usecases": [
+    "[creative] Marketing materials for workshops or conferences focused on innovation.",
+    "..."
+    ],
+  "styles": [
+    "bold", 
+    "sans-serif",
+    "..."
+    ],
+  "colors": [
+    "yellow",
+    "white"
+  ]
 }
 ```
 
