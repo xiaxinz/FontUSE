@@ -1,0 +1,79 @@
+You will receive an image that contains text. Analyze the font of the MAIN text and respond ONLY with a single valid JSON object.
+
+### TASK
+
+From the text in the image, infer:
+
+1. **"suitable-for"**  
+   - 1 short sentence (max 30 words) describing what kind of projects or moods this font is suitable for.  
+   - Perspective: a professional graphic designer.
+
+2. **"usecases"**  
+   - An array with 3–4 concrete, distinct use cases.  
+   - Each item must follow this pattern:
+     "[style tags] short description of ideal applications."
+   - The **style tags in square brackets** should explain WHY the font fits that scenario from a typographic point of view.
+   - The description part after the brackets should:
+     - Combine a **medium** (logo, poster, packaging, title lettering, UI banner, book cover, etc.)
+     - With a **theme / industry / mood** (glam rock, retro space-themed music, cosmetics, kids candy, horror movie, wedding invitation, etc.)
+     - You may list several small application scenes, but keep each use case not too long.
+   - Avoid vague phrases like only "branding", "advertising", or "logos". Make them specific (e.g., "logo for retro sci-fi video game", "headline for horror movie poster").
+   -  Example of the expected style:
+     "[playful, comic, decorative] Packaging and merchandise for cosmetics, glittery or celestial-themed products, for pop culture, like pins, shirts, or stationery featuring whimsical or galactic designs."  
+     "[fantasy] Promotional material for glam rock, or title lettering for a retro space-themed music album cover."  
+
+
+3. **"styles"**  
+   - An array of 6–15 keywords describing the font’s style.  
+   - Include:
+     - classification keywords: e.g., serif, sans-serif, italic, grotesque, gothic, script, handwritten, letterbat, all-caps, small-caps, display, condensed, expanded, thin, bold, ultra bold, wide, narrow, fat, rounded, curvy, geometric, monoline, high-contrast, brush, pixel. (just examples)
+     - emotional / mood keywords: e.g., playful, cute, formal, informal, elegant, luxurious, serious, childish, retro, fantasy, fancy, futuristic, friendly, soft, strong, dramatic, graffiti, horror, techy, techno, si-fi, geometric, ugly, neat, masculine, asia, arabic. (just examples)
+     - visual / effect keywords if present: e.g., 3D, embossed, beveled, shadow, outline, gradient, metallic, glossy, glittery, neon, halftone, transparent, glowing, inflated, bubbly, textured, distressed, grunge, neon, distorted. (just examples)
+
+4. **"colors"**  
+   - An array of 1–3 basic color names describing the main color(s) of the text, e.g., ["purple", "pink"], ["black"], ["gold", "white"], ["monotone"].  
+   - Use simple English color words.  
+   - If the font clearly uses many different colors and no single one dominates, respond with ["multiple"].
+
+### OUTPUT FORMAT (VERY IMPORTANT)
+
+You MUST obey ALL of the following:
+
+- Respond with **ONLY one JSON object**, no extra text, no explanation.
+- Do NOT wrap the JSON in backticks or markdown.
+- Use **double quotes** for all keys and string values.
+- Do NOT include trailing commas.
+- Keys must be exactly: `"suitable-for"`, `"usecases"`, `"styles"`, `"colors"`.
+- `"usecases"`, `"styles"`, `"colors"` must be JSON arrays.
+
+Example of the expected structure (note that the values are just an example):
+
+{
+  "suitable-for": "Projects that need to feel dreamy, playful, and cosmic with a nostalgic pop-culture vibe.",
+  "usecases": [
+    "[fantasy] Promotional material for glam rock, or title lettering for a retro space-themed music album cover."
+    "[playful, comic, decorative] Packaging and merchandise for cosmetics, glittery or celestial-themed products, for pop culture, like pins, shirts, or stationery featuring whimsical or galactic designs."
+    "[retro-futurism, disco] Themed parties, like 70s disco nights, cosmic-themed birthdays, or other festive occasions."
+    "[dramatic, decorative] As a title font in posters, digital art, or marketing materials where a standout, decorative typeface is needed."
+  ],
+  "styles": [
+    "display",
+    "script",
+    "bold",
+    "curvy",
+    "rounded",
+    "3D",
+    "glossy",
+    "bubbly",
+    "playful",
+    "retro",
+    "cosmic",
+    "decorative"
+  ],
+  "colors": [
+    "purple",
+    "pink"
+  ]
+}
+
+Now analyze the following image and respond ONLY with a JSON object in the format above.
