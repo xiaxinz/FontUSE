@@ -26,7 +26,7 @@ The final outputs are JSON files that can be used to build datasets for controll
   A `nonRomanList.json` file is also written to record samples that contain non-latin characters.
 
 - `usecase_gen.py`  
-  Uses a GPT model with a custom prompt (`prompts/system_prompt.txt``prompts/user_prompt.txt`) to describe:
+  Uses a GPT model with a custom prompt (`prompts/system_prompt.txt`, `prompts/user_prompt.txt`) to describe:
   - a short caption for the image,
   - font style / design keywords,
   - a list of use cases where this font would be suitable.  
