@@ -28,8 +28,8 @@ OUTPUT_DIR = "./testdata-3/caption"
 Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
 # Paths to the saved prompts
-SYSTEM_PROMPT_PATH = Path("system_prompt.txt")  # the system prompt I wrote for you
-USER_PROMPT_PATH = Path("user_prompt.txt")      # the user prompt I wrote for you
+SYSTEM_PROMPT_PATH = Path("system_prompt.txt")
+USER_PROMPT_PATH = Path("user_prompt.txt")
 # Load prompts
 SYSTEM_PROMPT = SYSTEM_PROMPT_PATH.read_text(encoding="utf-8")
 USER_PROMPT = USER_PROMPT_PATH.read_text(encoding="utf-8")
